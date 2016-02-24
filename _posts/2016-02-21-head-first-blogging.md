@@ -2,8 +2,6 @@
 layout: post
 title: Head First Blogging
 category: Blog
-tags:
-- blogging
 ---
 I have been fiddling around with [Wordpress](https://wordpress.org/ "Wordpress CMS") as <abbr title="Content Management System">CMS</abbr> for some sites, including this one. Working with Wordpress themes and templates is a tedious task, and I haven't gotten completely into it. It's a little bit too easy to just install plugins that do some magic, but not necessarily exactly the way you want it.
 
