@@ -25,5 +25,5 @@
   Standards: HTML, CSS, Javascript
   Components/Tools:
 
-  Software/Hosting: Jekyll, GitHub Pages, Binero
+  Software: Jekyll, GitHub Pages
   IDE: Atom, Octapage
