@@ -6,4 +6,9 @@
 - [ ] Add tags management for posts
 - [x] Install default Pattern Lab instance
 - [x] Install grunt
-- [ ] Set up basic grunt build script
+- [x] Set up basic grunt build script
+- [ ] Add Sass to grunt build
+- [ ] Add Post CSS to grunt build
+- [ ] Add Pattern Lab generation to grunt build
+- [ ] Add Watch & Reload to grunt build
+- [ ] Add local Jekyll generation to grunt build
