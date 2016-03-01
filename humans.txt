@@ -1,1 +1,29 @@
-# humans.txt
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+/* TEAM */
+
+  Personal web site of:
+
+  Jonas Päckos
+  Contact: hello [at] pekkos.com
+  Twitter: @pekkos
+  From: Gothenburg, Sweden
+
+
+/* THANKS */
+
+
+
+/* SITE */
+
+	Last update: 2016/02/28
+	Language: English
+
+	Doctype: HTML5
+  Standards: HTML, CSS, Javascript
+  Components/Tools:
+
+  Software/Hosting: Jekyll, GitHub Pages, Binero
+  IDE: Atom, Octapage
