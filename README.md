@@ -5,5 +5,5 @@
 - [x] Add basic and minimal Page structure
 - [ ] Add tags management for posts
 - [x] Install default Pattern Lab instance
-- [ ] Install grunt
+- [x] Install grunt
 - [ ] Set up basic grunt build script
