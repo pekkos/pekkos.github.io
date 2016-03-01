@@ -43,6 +43,9 @@ module.exports = function(grunt) {
       // Show current weather
       weather: {
         command: "curl -s http://wttr.in/Gothenburg | head -7"
+      },
+      jekyll_build: {
+        command: "bundle exec jekyll build"
       }
     },
 
@@ -72,5 +75,8 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['build']);
   grunt.registerTask('build', ['shell:weather', 'devUpdate']);
+  grunt.registerTask('jekyll', ['shell:weather', 'shell:jekyll_build']);
+  grunt.registerTask('update', ['devUpdate']);
+
 
 };
