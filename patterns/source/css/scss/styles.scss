@@ -1,0 +1,12 @@
+
+@mixin color {
+  color: red;
+  text-decoration: none;
+}
+
+
+
+body {
+  background-color: pink;
+  @include color;
+}
