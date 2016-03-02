@@ -13,7 +13,7 @@ And so, nothing ever really got published. No posts, no nothing. Well, one or tw
 
 Now, encouraged by reading a lot about static HTML generators, I have decided to start over and this time use [Jekyll](http://jekyllrb.com/ "Jekyll static website and blog builder") together with [GitHub Pages](https://pages.github.com/ "GitHub Pages for hosting websites") as the foundation for my site.
 
-My initial feeling is that I am much more in control of the site and it assets, including markup, styles and folder structures. And of course what javascripts are running on my site.
+My initial feeling is that I am much more in control of the site and its assets, including markup, styles and folder structures. And of course which javascripts are running on my site.
 
 At the moment, the site looks like crap, which is intentional. I really wanted to just start blogging instead of worrying how things look. I rest assured, and you should too, that this site will look better and better with time. I intend to use it as a platform for learning, and document stuff along the way.
 
