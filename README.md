@@ -7,7 +7,7 @@
 - [x] Install default Pattern Lab instance
 - [x] Install grunt
 - [x] Set up basic grunt build script
-- [ ] Add Sass to grunt build
+- [x] Add Sass to grunt build
 - [ ] Add Post CSS to grunt build
 - [ ] Add Pattern Lab generation to grunt build
 - [ ] Add Watch & Reload to grunt build
