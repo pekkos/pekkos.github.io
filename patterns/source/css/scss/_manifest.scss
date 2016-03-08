@@ -1,0 +1,19 @@
+@import "base/base";
+
+
+@mixin color {
+  color: red;
+  text-decoration: none;
+}
+
+
+
+body {
+  background-color: pink;
+  @include color;
+  border-radius: 0;
+
+  @include old-ie {
+    zoom: 1;
+  }
+}

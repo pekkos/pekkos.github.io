@@ -1,9 +1,4 @@
-/**
- *
- * BASE
- *
- */
-/* Helper @mixins */
+
 /**
  * OLD-IE
  *
@@ -21,13 +16,13 @@
  * $old-ie: true;
  *
  */
-body {
-  background-color: pink;
-  color: red;
-  text-decoration: none;
-  border-radius: 0;
-}
 
-html {
-  font-size: 80%;
+
+$old-ie: false !default;
+
+@mixin old-ie {
+  // Only use this content if we're dealing with old IE
+  @if $old-ie {
+    @content;
+  }
 }
