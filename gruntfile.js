@@ -45,7 +45,8 @@ module.exports = function(grunt) {
         command: "curl -s http://wttr.in/Gothenburg | head -7"
       },
       jekyll_build: {
-        command: "bundle exec jekyll build"
+//        command: "bundle exec jekyll build"
+        command: "jekyll build"
       }
     },
 
