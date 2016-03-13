@@ -45,7 +45,9 @@ module.exports = function(grunt) {
         command: "curl -s http://wttr.in/Gothenburg | head -7"
       },
       jekyll_build: {
-//        command: "bundle exec jekyll build"
+        command: "jekyll build --limit_posts 10"
+      },
+      jekyll_build_full: {
         command: "jekyll build"
       }
     },
@@ -194,6 +196,9 @@ module.exports = function(grunt) {
 
   // Build Jekyll site using assets from Pattern Lab
   grunt.registerTask('jekyll', ['copy', 'shell:jekyll_build']);
+
+  // Build full Jekyll site using assets from Pattern Lab
+  grunt.registerTask('jekyll_full', ['copy', 'shell:jekyll_build_full']);
 
   // Update packages
   grunt.registerTask('update', ['devUpdate']);
