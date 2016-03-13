@@ -30,7 +30,7 @@ To create a fenced code block, [use triple backticks](https://help.github.com/ar
 ```
 </pre>
 
-The above results in the following <code><pre></code> formatted code block, and you can make your code look pretty using a [Pygments theme](http://jwarby.github.io/jekyll-pygments-themes/languages/javascript.html) compatible with Rouge:
+The above results in the following <code><pre></code> formatted code block, and you can make your code look pretty using a [Pygments CSS theme](http://jwarby.github.io/jekyll-pygments-themes/languages/javascript.html) compatible with Rouge:
 
 ```scss
 @mixin text-color($color) {
