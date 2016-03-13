@@ -9,6 +9,8 @@ As stated on [GitHub Pages](https://help.github.com/articles/using-syntax-highli
 
 In fact, [GitHub Pages *only* supports](https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0) Rouge as syntax highlighter. Traditionally, highlighting in Jekyll was implemented using the <code>&#123;% highlight %&#125;</code> Liquid tag, but now pure Markdown can be used instead.
 
+However, if you want to write a block of Liquid tags, you need to wrap your code with <code>&#123;% raw %&#125;</code> and <code>&#123;% endraw %&#125;</code> to stop Liquid from interpreting your code as Liquid code.
+
 
 ## Code blocks
 
