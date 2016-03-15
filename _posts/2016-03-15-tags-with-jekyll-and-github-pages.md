@@ -5,7 +5,7 @@ category: Link
 tags:
   jekyll
 ---
-Coming from the Wordpress world, I'm used to easily work with tags and categories for blog posts. However, tags aren't supported out of the box in Jekyll. There are some [nice Ruby plugins](https://github.com/pattex/jekyll-tagging) that will do the trick. Since my blog is published using GitHub Pages, and GitHub Pages doesn't allow Ruby plugins, I can't use those.
+Coming from the Wordpress world, I'm used to easily work with tags and categories for blog posts. However, tags aren't supported out of the box in Jekyll. Here is a [nice Ruby plugin](https://github.com/pattex/jekyll-tagging) that will do the trick. But since my blog is published using GitHub Pages, and GitHub Pages doesn't allow Ruby plugins, I can't use this.
 
 I found a solution by [Brandon Parsons](https://twitter.com/bkparso), where you create a [tags page](/tags/) which gets populated with all used tags and links to posts. There is no way to dynamically create separate pages for each tag, but this should be good enough for me. If you really really want separate pages for each tag, [there is a solution here](http://charliepark.org/tags-in-jekyll/).
 
