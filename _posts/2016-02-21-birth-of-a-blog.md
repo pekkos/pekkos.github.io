@@ -7,7 +7,7 @@ Four years ago, around this time of the year, I acquired this domain after keepi
 
 So, with a fresh domain, I set off with the ambition to create a really good looking website before publishing content for real. I had my mind set on creating one helluva Wordpress theme. However, creating Wordpress themes is a tedious task, a task which I haven't gotten completely into. I find things are a little too spread out over themes, child themes and plugins.
 
-However, working full-time as web designer leaves me with limited time and energy to keep doing the same kind of work stuff in my spare time. That gorgeous Wordpress theme didn't really happen.
+Anyway, working full-time as web designer leaves me with limited time and energy to keep doing the same kind of work stuff in my spare time. That gorgeous Wordpress theme didn't really happen.
 
 And so, nothing ever really got published. No posts, no nothing. Well, one or two starting posts, but that was it.
 
