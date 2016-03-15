@@ -3,7 +3,7 @@
 ## TODO
 
 - [x] Add basic and minimal Page structure
-- [ ] Add tags management for posts
+- [x] Add tags management for posts
 - [x] Install default Pattern Lab instance
 - [x] Install grunt
 - [x] Set up basic grunt build script
