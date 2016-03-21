@@ -15,7 +15,7 @@ Now, encouraged by reading a lot about static HTML generators, I have decided to
 
 My initial feeling is that I am much more in control of the site and its assets, including markup, styles and folder structures. And of course which javascripts are running on my site.
 
-At the moment, the site looks like crap, which is intentional. I really wanted to just start blogging instead of worrying how things look. I rest assured, and you should too, that this site will look better and better with time. I intend to use it as a platform for learning, and document stuff along the way.
+**At the moment, the site looks like crap**, which is intentional. I really wanted to just start blogging instead of worrying how things look. I rest assured, and you should too, that this site will look better and better with time. I intend to use it as a platform for learning, and document stuff along the way.
 
 Ok then, I'm ready to plunge in, and dive head first into learning, blogging and spreading the word of stuff I find interesting within the wonderful world of [Web Design](https://en.wikipedia.org/wiki/Web_design).
 
