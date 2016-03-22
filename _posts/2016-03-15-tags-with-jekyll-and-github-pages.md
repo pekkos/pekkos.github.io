@@ -4,6 +4,7 @@ title: Tags with Jekyll and GitHub Pages
 category: Link
 tags: jekyll
 comments: true
+page_permalink: pretty
 ---
 Coming from the Wordpress world, I'm used to easily work with tags and categories for blog posts. However, tags aren't supported out of the box in Jekyll. Here is a [nice Ruby plugin](https://github.com/pattex/jekyll-tagging) that will do the trick. But since my blog is published using GitHub Pages, and GitHub Pages doesn't allow Ruby plugins, I can't use this.
 
