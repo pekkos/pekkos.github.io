@@ -11,7 +11,7 @@ Coming from the Wordpress world, I'm used to easily work with tags and categorie
 
 I found a solution by [Brandon Parsons](https://twitter.com/bkparso), where you create a [tags page](/tags/) which gets populated with all used tags and links to posts. There is no way to dynamically create separate pages for each tag, but this should be good enough for me. If you really really want separate pages for each tag, [there is a solution here](http://charliepark.org/tags-in-jekyll/).
 
-Add tags to YAML front matter, and add a few lines of code to list all tags for the post. Code for the tags page can be found on [Brandons blog post](https://blog.brandonparsons.me/2015-using-tags-in-a-jekyll-blog-on-github-pages).
+Add tags to YAML front matter, and add a few lines of code to list all tags for the post. Code for the tags page can be found in [Brandons blog post](https://blog.brandonparsons.me/2015-using-tags-in-a-jekyll-blog-on-github-pages).
 
 ```rb
 ---
@@ -21,16 +21,11 @@ tags:
 ```
 
 ```yaml
-{% raw %}
-<ul>
+{% raw %}<ul>
   {% for tag in page.tags %}
   <li>
     <a href="/tags/#{{ tag }}">{{ tag }}</a>
   </li>
   {% endfor %}
-</ul>
-{% endraw %}
-
+</ul>{% endraw %}
 ```
-
-Visit link: [https://blog.brandonparsons.me/2015-using-tags-in-a-jekyll-blog-on-github-pages](https://blog.brandonparsons.me/2015-using-tags-in-a-jekyll-blog-on-github-pages)

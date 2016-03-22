@@ -1,5 +1,9 @@
 name: P E K K O S
 exclude: ["patterns", "gruntfile.js", "package.json", "node_modules"]
-permalink: /:categories/:title
+permalink: /:categories/:title/
 gems:
   - jekyll-redirect-from
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
