@@ -4,6 +4,7 @@ title: Syntax highlighting for Jekyll
 category: Blog
 tags: jekyll
 comments: true
+redirect_from: "/blog/2016/03/13/syntax-highlighting.html"
 ---
 Reading code isn't always that easy, which is why syntax highlighting is a good idea.
 
