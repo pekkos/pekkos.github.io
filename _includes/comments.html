@@ -31,5 +31,7 @@ s.setAttribute('data-timestamp', +new Date());
   {% endif %}
 
 {% else %}
+  {% if page.comments %}
   <small style="background-color: #ff9;">&lt;Comments here&gt;</small>
+  {% endif %}
 {% endif %}
