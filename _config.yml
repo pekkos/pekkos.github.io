@@ -1,4 +1,5 @@
 name: P E K K O S
+url: http://www.pekkos.com
 exclude: ["patterns", "gruntfile.js", "package.json", "node_modules"]
 permalink: /:categories/:title/
 gems:
