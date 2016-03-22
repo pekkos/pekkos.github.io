@@ -2,8 +2,8 @@
 layout: post
 title: Syntax highlighting for Jekyll
 category: Blog
-tags:
-  jekyll
+tags: jekyll
+comments: true
 ---
 Reading code isn't always that easy, which is why syntax highlighting is a good idea.
 

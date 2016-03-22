@@ -1,2 +1,3 @@
 name: P E K K O S
-exclude: ["patterns", "gruntfile.js", "package.json"]
+exclude: ["patterns", "gruntfile.js", "package.json", "node_modules"]
+permalink: none

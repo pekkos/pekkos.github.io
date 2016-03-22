@@ -2,6 +2,7 @@
 layout: post
 title: Birth of a Blog
 category: Blog
+comments: true
 ---
 Four years ago, around this time of the year, I acquired this domain after keeping watch for a few years to see if it would be available. I installed a [Wordpress](https://wordpress.org/ "Wordpress CMS") site, as I had managed a few Wordpress sites before.
 
