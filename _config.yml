@@ -1,5 +1,5 @@
 name: P E K K O S
 exclude: ["patterns", "gruntfile.js", "package.json", "node_modules"]
-permalink: /:categories/:title
+permalink: pretty
 gems:
   - jekyll-redirect-from
