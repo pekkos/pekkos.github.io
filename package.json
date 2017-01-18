@@ -5,12 +5,12 @@
   "repository": "https://github.com/pekkos/pekkos.github.io.git",
   "license": "UNLICENSED",
   "devDependencies": {
-    "grunt": "^0.4.5",
+    "grunt": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-dev-update": "^1.4.0",
+    "grunt-dev-update": "^2.0.0",
     "grunt-notify": "^0.4.5",
-    "grunt-sass": "^1.1.0",
-    "grunt-shell": "^1.2.1",
+    "grunt-sass": "^2.0.0",
+    "grunt-shell": "^2.1.0",
     "time-grunt": "^1.3.0"
   }
 }
