@@ -367,7 +367,7 @@ module.exports = function(grunt) {
   grunt.registerTask('min', ['cssmin', 'gzip', 'notify:done']);
 
   // Run complete CSS workflow with 'grunt css'
-  grunt.registerTask('css', ['sass', 'postcss', 'cssmin', 'notify:done']);
+  grunt.registerTask('css', ['sass', 'postcss', 'cssmin', 'gzip', 'notify:done']);
 
 
 
