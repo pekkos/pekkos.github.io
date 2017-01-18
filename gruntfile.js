@@ -7,6 +7,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
 
+
     /**
      *
      * Update packages automatically
@@ -43,6 +44,10 @@ module.exports = function(grunt) {
       // Show current weather
       weather: {
         command: "curl -s http://wttr.in/Gothenburg | head -7"
+      },
+      // Build patterns @ Pattern Lab
+      patternlab_build: {
+        command: "php patterns/core/console --generate"
       },
       jekyll_build: {
         command: "jekyll build --limit_posts 10"
@@ -193,6 +198,9 @@ module.exports = function(grunt) {
   // Default task
   grunt.registerTask('default', ['build']);
   grunt.registerTask('build', ['shell:weather', 'devUpdate']);
+
+  // Build Patterns in Pattern Lab
+  grunt.registerTask('pl', ['shell:patternlab_build']);
 
   // Build Jekyll site using assets from Pattern Lab
   grunt.registerTask('jekyll', ['copy', 'shell:jekyll_build']);
