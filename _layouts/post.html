@@ -7,7 +7,7 @@ layout: default
   <div class="meta_wrapper">
     <span><!-- page.category (removed temporarily?) -->
       <time class="dt-published" datetime="{{page.date | date: "%Y-%m-%d"}}">{{page.date | date: "%B %e, %Y"}}</time>
-      <p>datetime: {{page.date | date: "%Y-%m-%d"}}</p>
+      <p>datetime: {{page.date | date: "%Y-%m-%d %H:%M:%S"}}</p>
     </span>
     <ul class="tag_list_in_post">
       {% for tag in page.tags %}
