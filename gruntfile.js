@@ -91,26 +91,7 @@ module.exports = function(grunt) {
            dest: 'patterns/source/css',
            ext: '.css'
          }]
-       },
-
-      //  minified: {
-      //    options: {
-      //      sourcemap: 'none',
-      //      outputStyle: 'compressed',
-      //      lineComments: false,
-      //      debugInfo: false,
-      //      noCache: true
-      //    },
-       //
-      //    files: [{
-      //      expand: true,
-      //      cwd: 'patterns/source/css/scss',
-      //      src: ['*.min.scss'],
-      //      dest: 'patterns/source/css',
-      //      ext: '.min.css'
-      //    }]
-      //  }
-
+       }
      },
 
 
@@ -129,6 +110,7 @@ module.exports = function(grunt) {
            map: false, // inline sourcemaps
 
            processors: [
+             require('postcss-discard-duplicates'), // removes duplicate rules
              require('postcss-merge-rules'), // merge adjacent css rules
              require('pixrem')(), // add fallbacks for rem units
              require('autoprefixer')({browsers: ['last 3 versions', 'ie 8', 'ie 9', '> 1%']}) // add vendor prefixes
@@ -144,12 +126,38 @@ module.exports = function(grunt) {
 
      /**
       *
+      * Pack identical media queries together into single media query rule
+      *
+      */
+
+     css_mqpacker: {
+       options: {
+         map: false,
+         sort: true
+       },
+       main: {
+         cwd: 'patterns/source/css/',
+         dest: 'patterns/source/css/',
+         expand: true,
+         src: ['styles.css', 'styles-oldie.css']
+       }
+     },
+
+
+
+
+
+     /**
+      *
       * Minify CSS
       *
       */
 
      cssmin: {
-       css:{
+       css: {
+         options: {
+           advanced: false
+         },
          files: [{
            expand: true,
            cwd: 'patterns/source/css',
@@ -167,8 +175,56 @@ module.exports = function(grunt) {
 
      /**
       *
+      * Concatenate js files from each folder to corresponding files
+      *
+      */
+
+     concat: {
+       vendor_libs: {
+         src: [
+           'patterns/source/js/vendor-libs/*.js'
+         ],
+         dest: 'patterns/source/js/vendor.libs.js'
+       },
+       vendor_modules: {
+         src: [
+           'patterns/source/js/vendor-modules/*.js'
+         ],
+         dest: 'patterns/source/js/vendor.modules.js'
+       },
+       vendor_polyfills: {
+         src: [
+           'patterns/source/js/polyfills/*.js'
+         ],
+         dest: 'patterns/source/js/polyfills.js'
+       },
+       modules: {
+         src: [
+           'patterns/source/js/modules/*.js'
+         ],
+         dest: 'patterns/source/js/modules.js'
+      //  },
+      //  maps: {
+      //    src: [
+      //      'source/js/maps/*.js'
+      //    ],
+      //    dest: 'source/js/maps.js'
+      //  },
+      //  maps_json: {
+      //    src: [
+      //      'source/js/maps/maps.google.branches.json'
+      //    ],
+      //    dest: 'source/js/maps.google.branches.json'
+       }
+     },
+
+
+
+
+     /**
+      *
       * Gzip
-      * Calculates Gzipped CSS file sizes
+      * Calculates Gzipped asset file sizes
       *
       */
 
@@ -186,39 +242,6 @@ module.exports = function(grunt) {
 
 
 
-     /**
-      *
-      * Copy asset files to Jekyll
-      *
-      */
-
-     copy: {
-       css: {
-         expand: true,
-         cwd: 'patterns/source/css',
-         src: '**/*.min.css',
-         dest: 'css'
-       },
-
-       gfx: {
-         expand: true,
-         cwd: 'patterns/source/css/gfx',
-         src: '**/*',
-         dest: 'css/gfx'
-       },
-
-       type: {
-         expand: true,
-         cwd: 'patterns/source/css/type',
-         src: '**/*',
-         dest: 'css/type'
-       }
-     },
-
-
-
-
-
       /**
        *
        * Notify task progress to developer
@@ -230,6 +253,12 @@ module.exports = function(grunt) {
           options: {
             title: 'pekkos.com: Done',
             message: 'OK, I did my stuff for you.'
+          }
+        },
+        watch: {
+          options: {
+            title: 'pekkos.com: Watch',
+            message: 'Now watching for changes'
           }
         },
         sass: {
@@ -276,14 +305,106 @@ module.exports = function(grunt) {
           'patterns/source/css/scss/**/*.scss'
         ],
         tasks: [
-          'sass',           // compile Sass to CSS
-          'newer:postcss'   // post process CSS
+          'sass',                   // compile Sass to CSS
+          'newer:postcss',          // post process CSS
+          'css_mqpacker',           // pack media queries
+          'cssmin',                 // minify css files for production
+          'shell:patternlab_build', // generate patterns
+          'notify:watch'
         ],
         options: {
           spawn: false
         }
-      }
+      },
 
+
+
+      // Watch for changes in JS files and concatenate
+
+      scripts: {
+        files: [ 'patterns/source/js/**/*.js' ],
+        tasks: [
+          'newer:concat',
+          'shell:patternlab_build',
+          'notify:watch' ],
+        options: {
+          spawn: false,
+        }
+      }
+    },
+
+
+
+
+
+    /**
+     *
+     * Concatenate SVG icons into a SVG sprite file
+     *
+     */
+
+    svgstore: {
+      // https://github.com/FWeinb/grunt-svgstore
+      options: {
+        prefix : 'icon--', // This will prefix each ID
+        includeTitleElement: false,
+        svg: { // will add and overide the the default xmlns="http://www.w3.org/2000/svg" attribute to the resulting SVG
+          viewBox : '0 0 24 24',
+          xmlns: 'http://www.w3.org/2000/svg'
+        }
+      },
+      default: {
+        files: {
+          'patterns/source/css/icons/icons.svg': ['patterns/source/css/icons/svg/*.svg']
+        }
+      }
+    },
+
+
+
+
+
+    /**
+     *
+     * Copy asset files to Jekyll
+     *
+     */
+
+    copy: {
+      css: {
+        expand: true,
+        cwd: 'patterns/source/css',
+        src: '**/*.min.css',
+        dest: 'css'
+      },
+
+      gfx: {
+        expand: true,
+        cwd: 'patterns/source/css/gfx',
+        src: '**/*',
+        dest: 'css/gfx'
+      },
+
+      icons: {
+        expand: true,
+        cwd: 'patterns/source/css/icons',
+        src: '*.svg',
+        dest: 'css/icons'
+      },
+
+      type: {
+        expand: true,
+        cwd: 'patterns/source/css/type',
+        src: '**/*',
+        dest: 'css/type'
+      },
+
+      js: {
+        expand: true,
+        cwd: 'patterns/source/js',
+        src: '*.js',
+        dest: 'js'
+      }
     }
 
 
@@ -311,7 +432,12 @@ module.exports = function(grunt) {
   // Real stuff :)
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-postcss');
+  grunt.loadNpmTasks("grunt-css-mqpacker");
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-svgstore');
+
+
 
 
 
@@ -347,11 +473,13 @@ module.exports = function(grunt) {
   grunt.registerTask('j', ['shell:jekyll_build_full']);
 
   // Build limited Jekyll site using 'grunt j10'
-  grunt.registerTask('j', ['shell:jekyll_build_limited']);
+  grunt.registerTask('j10', ['shell:jekyll_build_limited']);
 
   // Build Jekyll site with updated assets from Pattern Lab using 'grunt jekyll'
   grunt.registerTask('jekyll', ['copy', 'shell:jekyll_build_full']);
 
+  // Run CSS and JS workflow before Jekyll build
+  grunt.registerTask('jekyll_build', ['css', 'js', 'copy', 'shell:jekyll_build_full']);
 
 
 
@@ -363,11 +491,28 @@ module.exports = function(grunt) {
   // Run PostCSS processes on CSS with 'grunt post'
   grunt.registerTask('post', ['postcss', 'notify:done']);
 
+  // Pack mediaqueries in CSS with 'grunt pack'
+  grunt.registerTask('pack', ['css_mqpacker']);
+
   // Minify CSS files using 'grunt min'
   grunt.registerTask('min', ['cssmin', 'gzip', 'notify:done']);
 
   // Run complete CSS workflow with 'grunt css'
-  grunt.registerTask('css', ['sass', 'postcss', 'cssmin', 'gzip', 'notify:done']);
+  grunt.registerTask('css', ['sass', 'postcss', 'css_mqpacker', 'cssmin', 'gzip', 'notify:done']);
+
+
+
+  /* JS tasks */
+
+  // Concatenate and bundle JS files
+  grunt.registerTask('js', ['concat', 'notify:done']);
+
+
+
+  /* SVG taks */
+
+  // Concatenate SVG icons to sprite with 'grunt svg'
+  grunt.registerTask('svg', ['svgstore']);
 
 
 
