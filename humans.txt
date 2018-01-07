@@ -26,4 +26,4 @@
   Components/Tools:
 
   Software: Jekyll, GitHub Pages
-  IDE: Atom, Octapage
+  IDE: Atom, VS Code, Octapage

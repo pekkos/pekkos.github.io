@@ -1,0 +1,75 @@
+#Headless browser option
+browser:
+  phantomjs: "phantomjs"
+
+#If you want to have multiple snapping files, set the file name here
+snap_file: "javascript/snap.js"
+
+# Type the name of the directory that shots will be stored in
+directory: 'shots_local'
+
+history_dir: 'shots_history'
+
+# Add only 2 domains, key will act as a label
+domains:
+#  ci: "http://patternsci.biliang.bilia.se"
+  local: ""
+
+#Type screen widths below
+screen_widths:
+  - 300
+  - 450
+  - 700
+  - 900
+  - 1400
+
+#Type page URL paths below
+paths:
+#  home: /
+  pages-used-car-listing:       /patterns/06-pages-300-used-cars-(norway)-object-listing/06-pages-300-used-cars-(norway)-object-listing.html
+  pages-used-car-object:        /patterns/06-pages-300-used-cars-(norway)-object/06-pages-300-used-cars-(norway)-object.html
+  pages-vehicles:               /patterns/06-pages-410-vehicles-10-vehicles-in-stock@inprogress/06-pages-410-vehicles-10-vehicles-in-stock@inprogress.html
+  pages-vehicle-in-stock:       /patterns/06-pages-410-vehicles-21-vehicle-in-focus/06-pages-410-vehicles-21-vehicle-in-focus.html
+  pages-brand-overview:         /patterns/06-pages-420-brands-10-brand-overview/06-pages-420-brands-10-brand-overview.html
+  pages-brand-campaign:         /patterns/06-pages-420-brands-20-brand-campaign/06-pages-420-brands-20-brand-campaign.html
+  pages-brand-page:             /patterns/06-pages-420-brands-40-brand-page/06-pages-420-brands-40-brand-page.html
+  pages-branch-find:            /patterns/06-pages-430-branches-10-find-branch/06-pages-430-branches-10-find-branch.html
+  pages-branch:                 /patterns/06-pages-430-branches-20-branch/06-pages-430-branches-20-branch.html
+  pages-booking-1:              /patterns/06-pages-440-booking-10-vehicle-details-STEP-1/06-pages-440-booking-10-vehicle-details-STEP-1.html
+  pages-booking-2a:             /patterns/06-pages-440-booking-20-service-selection-STEP-2A@/06-pages-440-booking-20-service-selection-STEP-2A@.html
+  pages-booking-2c:             /patterns/06-pages-440-booking-21-service-details-STEP-2C-glass-area/06-pages-440-booking-21-service-details-STEP-2C-glass-area.html
+  pages-booking-3a:             /patterns/06-pages-440-booking-30-appointment-location-STEP-3A@inprogress/06-pages-440-booking-30-appointment-location-STEP-3A@inprogress.html
+  pages-booking-3b:             /patterns/06-pages-440-booking-31-appointment-date-STEP-3B-time/06-pages-440-booking-31-appointment-date-STEP-3B-time.html
+  pages-booking-4:              /patterns/06-pages-440-booking-40-moresales-STEP-4@inprogress/06-pages-440-booking-40-moresales-STEP-4@inprogress.html
+  pages-booking-5:              /patterns/06-pages-440-booking-50-customer-details-STEP-5@inprogress@inprogress/06-pages-440-booking-50-customer-details-STEP-5@inprogress@inprogress.html
+  molecules-spot:               /patterns/02-molecules-460-spot/index.html
+  pages-section:                /patterns/06-pages-475-section-section/06-pages-475-section-section.html
+  pages-categories-layout3.1:   /patterns/06-pages-475-section-categories-layout3-1/06-pages-475-section-categories-layout3-1.html
+  pages-product:                /patterns/06-pages-472-product-product/06-pages-472-product-product.html
+  pages-product-package:        /patterns/06-pages-472-product-product-package/06-pages-472-product-product-package.html
+  pages-checkout:               /patterns/06-pages-473-checkout-10-checkout/06-pages-473-checkout-10-checkout.html
+  pages-cart:                   /patterns/06-pages-473-checkout-30-cart/06-pages-473-checkout-30-cart.html
+  pages-cart.layout3.1:         /patterns/06-pages-473-checkout-30-cart-layout-3-1/06-pages-473-checkout-30-cart-layout-3-1.html
+  pages-checkout-address:       /patterns/06-pages-473-checkout-checkout-address/06-pages-473-checkout-checkout-address.html
+  pages-order-payment:          /patterns/06-pages-473-checkout-order-payment/06-pages-473-checkout-order-payment.html
+  pages-account:                /patterns/06-pages-474-account-account/06-pages-474-account-account.html
+  pages-order-confirmation:     /patterns/06-pages-473-checkout-20-order-confirmation/06-pages-473-checkout-20-order-confirmation.html
+  pages-account-sign-in:        /patterns/06-pages-474-account-account-sign-in/06-pages-474-account-account-sign-in.html
+  pages-content-page:           /patterns/06-pages-500-pages-02-content-page/06-pages-500-pages-02-content-page.html
+
+
+
+#Amount of fuzz ImageMagick will use
+fuzz: '5%'
+
+#Set the number of days to keep the site spider file
+spider_days:
+  - 10
+
+#Choose how results are displayed, by default alphanumeric. Different screen widths are always grouped.
+#alphanumeric - all paths (with, and without, a difference) are shown, sorted by path
+#diffs_first - all paths (with, and without, a difference) are shown, sorted by difference size (largest first)
+#diffs_only - only paths with a difference are shown, sorted by difference size (largest first)
+mode: diffs_only
+
+threshold: 0
