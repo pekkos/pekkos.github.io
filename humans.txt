@@ -2,6 +2,7 @@
 /* humanstxt.org */
 
 
+
 /* TEAM */
 
   Personal web site of:
@@ -12,9 +13,6 @@
   From: Gothenburg, Sweden
 
 
-/* THANKS */
-
-
 
 /* SITE */
 
@@ -23,7 +21,7 @@
 
 	Doctype: HTML5
   Standards: HTML, CSS, Javascript
-  Components/Tools:
+  Components/Tools: -
 
   Software: Jekyll, GitHub Pages
   IDE: Atom, VS Code, Octapage
