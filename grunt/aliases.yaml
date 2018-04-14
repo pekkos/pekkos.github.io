@@ -1,0 +1,95 @@
+# run 'grunt' in development environment to start watching for changes
+default:
+  - 'shell:weather'
+  - 'devUpdate'
+  - 'watch'
+
+# Update dependencies with 'grunt update'
+update:
+  - 'devUpdate'
+
+
+
+# PATTERN LAB
+
+#  Build Patterns in Pattern Lab
+pl:
+  - 'shell:patternlab_build'
+
+
+
+# JEKYLL
+
+# Build Jekyll site using 'grunt j'
+j:
+  - 'shell:jekyll_build_full'
+
+# Build limited Jekyll site using 'grunt j10'
+j10:
+  - 'shell:jekyll_build_limited'
+
+# Build Jekyll site with updated assets from Pattern Lab using 'grunt jekyll'
+jekyll:
+  - 'copy'
+  - 'shell:jekyll_build_full'
+
+# Run CSS and JS workflow before Jekyll build
+jekyll_build:
+  -'css'
+  -'js'
+  -'copy'
+  -'shell:jekyll_build_full'
+
+
+
+# CSS
+
+# Compile Sass to CSS using 'grunt scss'
+scss:
+  - 'sass'
+  - 'notify:done'
+
+# Run PostCSS processes on CSS with 'grunt post'
+post:
+  - 'postcss'
+  - 'notify:done'
+
+# Pack mediaqueries in CSS with 'grunt pack'
+pack:
+  - 'css_mqpacker'
+
+# Minify CSS files using 'grunt min'
+min:
+  - 'cssmin'
+  - 'gzip'
+  - 'notify:done'
+
+# Run complete CSS workflow with 'grunt css'
+css:
+  - 'sass'
+  - 'postcss'
+  - 'css_mqpacker'
+  - 'cssmin'
+  - 'gzip'
+  - 'notify:done'
+
+
+
+# JS
+
+# Concatenate and bundle JS files
+js:
+  - 'concat'
+  - 'notify:done'
+
+
+
+# SVG
+
+# Concatenate SVG icons to sprite with 'grunt svg'
+svg:
+  - 'svgstore'
+
+
+
+# End of file :-)
