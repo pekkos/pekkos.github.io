@@ -11,7 +11,8 @@ exclude: [
   "Gemfile.lock",
   "npm-debug.log",
   "README.md",
-  "stylelint-readme.md"
+  "stylelint-readme.md",
+  "ui-test"
   ]
 permalink: /:categories/:title/
 gems:
