@@ -1,6 +1,18 @@
 name: P E K K O S
 url: http://www.pekkos.com
-exclude: ["patterns", "gruntfile.js", "package.json", "node_modules"]
+exclude: [
+  "patterns",
+  "gruntfile.js",
+  "package.json",
+  "node_modules",
+  "DONE.md",
+  "CNAME",
+  "Gemfile",
+  "Gemfile.lock",
+  "npm-debug.log",
+  "README.md",
+  "stylelint-readme.md"
+  ]
 permalink: /:categories/:title/
 gems:
   - jekyll-redirect-from
