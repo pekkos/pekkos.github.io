@@ -19,7 +19,7 @@ A quick search resulted in posts like [this](https://github.com/jekyll/jekyll/is
 I had no luck with all those tricks, and I can't say I understand everything that's going on under the hood of the Terminal. But what I did
 understand from my research was that when I updated MacOS to High Sierra, the Ruby version was also updated to version 2.3, but Jekyll still tried to reference Ruby version 2.0.
 
-So eventually, I found [this post on Stack Overflow](https://stackoverflow.com/questions/46541019/jekyll-with-ruby-2-3-on-macos-10-13-highsierra), which offered the simplest of solutions.
+So eventually, I found [this post on Stack Overflow](https://stackoverflow.com/questions/46541019/jekyll-with-ruby-2-3-on-macos-10-13-highsierra/46742979#46742979), where a comment offered the simplest of solutions.
 
 Uninstall Jekyll, and install it again. That easy, huh?
 
