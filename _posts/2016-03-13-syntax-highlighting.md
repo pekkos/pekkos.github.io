@@ -2,7 +2,7 @@
 layout: post
 title: Syntax highlighting for Jekyll
 category: Blog
-tags: jekyll
+tags: jekyll code
 comments: true
 redirect_from:
 - /blog/2016/03/13/syntax-highlighting.html
