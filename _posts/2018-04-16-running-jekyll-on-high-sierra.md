@@ -14,7 +14,7 @@ Which they didn't. Well, for the most part they did, but Jekyll refused to play 
 /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/
 bin/ruby: bad interpreter: No such file or directory
 ```
-A quick search resulted in posts like [this](https://github.com/jekyll/jekyll/issues/6637), and after trying some ruby magic I stumbled on Nokigiri which refused to play at all, and so I ended up on [this post](https://stackoverflow.com/questions/46866828/ruby-nokogiri-gem-install-mac-osx-high-sierra).
+A quick search resulted in posts like [this](https://github.com/jekyll/jekyll/issues/6637), and after trying some ruby magic I stumbled on [Nokigiri](https://github.com/sparklemotion/nokogiri) which refused to play at all, and so I ended up on [this post](https://stackoverflow.com/questions/46866828/ruby-nokogiri-gem-install-mac-osx-high-sierra).
 
 I had no luck with all those tricks, and I can't say I understand everything that's going on under the hood of the Terminal. But what I did
 understand from my research was that when I updated MacOS to High Sierra, the Ruby version was also updated to version 2.3, but Jekyll still tried to reference Ruby version 2.0.
