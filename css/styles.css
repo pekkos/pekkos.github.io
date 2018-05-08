@@ -450,6 +450,9 @@ header h1 a {
 }
 
 
+img {
+  max-width: 100%;
+}
 
 
 
