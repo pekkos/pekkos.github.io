@@ -18,3 +18,19 @@
 
 
 <!-- End of third party scripts -->
+
+function logTimes(message) {
+  performance.mark(message); // this one is for WebPageTest
+  console.timeStamp(message); // this is for the Performance tab in Chrome DevTools
+  console.info(message, performance.now()); // this is for the console, duh
+
+  // this here is for Google Analytics
+  ga('send', {
+    hitType: 'timing',
+    timingCategory: 'Performance',
+    timingVar: message,
+    timingValue: performance.now(),
+  });
+}
+
+logTimes('The page is really ready');
