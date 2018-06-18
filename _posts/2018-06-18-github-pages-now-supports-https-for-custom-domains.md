@@ -2,7 +2,7 @@
 layout: post
 title: Github now supports HTTPS for custom domains
 category: Blog
-tags: github pages, https
+tags: https
 comments: true
 ---
 
