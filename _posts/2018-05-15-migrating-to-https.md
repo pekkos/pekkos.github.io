@@ -12,8 +12,6 @@ So, while making a web site secure has always been important, now is the time to
 
 I am using GitHub Pages for this site, so I checked out their guide on [securing GitHub Pages sites with HTTPS](https://help.github.com/articles/securing-your-github-pages-site-with-https/), but unfortunately this doesn't cover custom domains. So what's a webmaster to do?
 
-{% include picture.html url="skyltar_2010_tnihpx" alt="alt text" %}
-
 ## Cloudflare to the rescue
 
 My web hosting is working on integrating [Let's Encrypt](https://letsencrypt.org/), which will eventually offer me a free certificate for this site, but for some reason the progress is slow. And I couldn't wait. Chrome 68 is about to happen soon.
