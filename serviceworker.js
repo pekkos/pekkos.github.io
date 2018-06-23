@@ -15,7 +15,7 @@ addEventListener('fetch', fetchEvent => {
       return responseFromFetch;
     }) // end fetch then
     .catch(error => {
-      return new Response('<h1>Oops!</h1> <p>Something went wrong...</p>',
+      return new Response('<h1>Oops!</h1> <p>Something went wrong, unfortunately</p>',
       {
         headers: {'Content-type': 'text/html; charset=utf-8'}
       }
