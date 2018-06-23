@@ -15,7 +15,7 @@ addEventListener('fetch', fetchEvent => {
       return responseFromFetch;
     }) // end fetch then
     .catch(error => {
-      return new Response('Oops! Something went wrong.');
+      return new Response('<h1>Oops!</h1> <p>Something went wrong.</p>');
     }) // end fetch catch
   ); // end responseWith
 });  // end addEventListener
