@@ -1,5 +1,5 @@
 const version = 'v0.02';
-const staticCacheName = 'staticfiles';
+const staticCacheName = version + 'staticfiles';
 
 addEventListener('install', installEvent => {
   console.log('The service worker is installing...');
