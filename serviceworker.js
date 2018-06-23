@@ -8,7 +8,7 @@ addEventListener('activate', function (event) {
 
 addEventListener('fetch', fetchEvent => {
   const request = fetchEvent.request;
-  console.log('The service worker is listening, yeah yeah yeah.')
+  console.log('The service worker is listening, yeah yeah yeah...')
   fetchEvent.respondWith(
     fetch(request)
     .then( responseFromFetch => {
