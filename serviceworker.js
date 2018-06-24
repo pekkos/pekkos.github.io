@@ -1,4 +1,4 @@
-const version = 'v0.02';
+const version = 'v0.04';
 const staticCacheName = version + 'staticfiles';
 
 addEventListener('install', installEvent => {
@@ -15,9 +15,24 @@ addEventListener('install', installEvent => {
 }); // end addEventListener
 
 
-addEventListener('activate', function (event) {
-  console.log('The service worker is activated.');
-});
+addEventListener('activate', activateEvent => {
+  activateEvent.waitUntil(
+    // Clean all the things!
+    caches.keys()
+    .then( cacheNames => {
+      return Promise.all(
+        cacheNames.map( cacheName => {
+          if (cacheName != staticCacheName) {
+            return caches.delete(cacheName);
+          } // end if
+        }) // end map
+      ); // end return Promise.all
+    }) // end keys then
+    .then( () => {
+      return clients.claim();
+    }) // end then
+  ); // end waitUntil
+}); // end addEventListener
 
 
 // When the browser requests a file...
