@@ -1,0 +1,8 @@
+
+styleguide/source/css/sass/utilities/_utilities.shame.scss
+ 13:3  ✖  Expected empty line before rule                              rule-empty-line-before
+ 25:3  ✖  Expected empty line before rule                              rule-empty-line-before
+ 30:1  ✖  Unexpected duplicate selector "html", first used at line 1   no-duplicate-selectors
+ 35:3  ✖  Expected empty line before rule                              rule-empty-line-before
+ 41:1  ✖  Unexpected duplicate selector "a", first used at line 8      no-duplicate-selectors
+

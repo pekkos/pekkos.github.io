@@ -10,7 +10,8 @@ h1{
   font-size:2em;
 }
 hr{
-  box-sizing:content-box;
+  -webkit-box-sizing:content-box;
+          box-sizing:content-box;
   height:0;
   overflow:visible;
 }
@@ -20,6 +21,9 @@ main{
 pre{
   font-family:monospace, monospace;
   font-size:1em;
+}
+a{
+  background-color:transparent;
 }
 abbr[title]{
   -webkit-text-decoration:underline dotted;
@@ -38,6 +42,17 @@ samp{
 }
 small{
   font-size:80%;
+}
+audio,
+video{
+  display:inline-block;
+}
+audio:not([controls]){
+  display:none;
+  height:0;
+}
+img{
+  border-style:none;
 }
 svg:not(:root){
   overflow:hidden;
@@ -64,8 +79,9 @@ input{
   overflow:visible;
 }
 legend{
+  -webkit-box-sizing:border-box;
   display:table;
-  box-sizing:border-box;
+          box-sizing:border-box;
   max-width:100%;
   color:inherit;
   white-space:normal;
@@ -80,6 +96,12 @@ select{
 textarea{
   margin:0;
   overflow:auto;
+}
+[type="checkbox"],
+[type="radio"]{
+  -webkit-box-sizing:border-box;
+          box-sizing:border-box;
+  padding:0;
 }
 [type="search"]{
   -webkit-appearance:textfield;
@@ -132,7 +154,10 @@ dialog:not([open]){
 summary{
   display:list-item;
 }
-template{
+canvas{
+  display:inline-block;
+}
+template,[hidden]{
   display:none;
 }
 /*! END: Normalize ------------- */
@@ -144,6 +169,39 @@ template{
   background:rebeccapurple;
 }
 
-p{
-  font-weight:bold;
+html{
+  border-color:blue;
+  background:pink;
+  background-image:-o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image:linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+
+.rounded{
+  border:1px solid red;
+  text-decoration:underline;
+}
+
+html{
+  line-height:1.5;
+}
+
+a{
+  text-decoration:none;
+}
+
+@media (min-width: 250px){
+  h1{
+    color:green;
+  }
+}
+
+@media (min-width: 500px){
+  .rounded{
+    border-radius:10px;
+    font-size:2rem;
+  }
+  div{
+    border-radius:4px;
+    background:blue;
+  }
 }
