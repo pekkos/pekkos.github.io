@@ -1,3 +1,46 @@
-p {
-  font-weight: bold;
+html {
+  background: pink;
+  border-color: blue;
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+
+  @include old-ie {
+    background: lightgreen;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (min-width: 500px) {
+  .rounded {
+    border-radius: 10px;
+    font-size: 2rem;
+  }
+}
+
+.rounded {
+  border: 1px solid red;
+  text-decoration: underline;
+}
+
+@media (min-width: 250px) {
+  h1 {
+    color: green;
+  }
+}
+
+html {
+  line-height: 1.5;
+}
+
+@media (min-width: 500px) {
+  div {
+    border-radius: 4px;
+    background: blue;
+  }
+}
+
+a {
+  text-decoration: none;
 }
