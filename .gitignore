@@ -1,9 +1,7 @@
 _site/
 .jekyll-metadata
-patterns/public/**/*
-patterns/public/*
-!patterns/public/index.html
-!patterns/public/styleguide/**/*
+styleguide/public/**/*
+styleguide/public/*
 node_modules/**/*
 node_modules/*
 .DS_Store
