@@ -1,7 +1,7 @@
 name: P E K K O S
 url: http://www.pekkos.com
 exclude: [
-  "patterns",
+  "styleguide",
   "gruntfile.js",
   "grunt",
   "gulpfile.js",
