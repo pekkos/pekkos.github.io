@@ -31,7 +31,6 @@ module.exports = function () {
     runSequence(
       'scss-lint',
       'stylelint-report',
-      'stylelint-done',
       callback
     )
   });
@@ -39,11 +38,8 @@ module.exports = function () {
 
   gulp.task("scss-lint", function () {
     return gulp.src(
-      [
-        'styleguide/source/css/sass/**/*.scss',
-        '!styleguide/source/css/sass/*.scss'
-      ]
-    )
+      ['styleguide/source/css/sass/**/*.scss',
+        '!styleguide/source/css/sass/*.scss'])
       .pipe(cssStylelint({
         failAfterError: false,
         reporters: [
@@ -52,7 +48,10 @@ module.exports = function () {
           { formatter: 'string', save: 'stylelint-report.txt' }
         ]
       })
-      );
+      .on('end', function () {
+        console.log('Styles linted and errors reported to stylelint-report.txt');
+      })
+    );
   });
 
 
@@ -65,11 +64,9 @@ module.exports = function () {
     return gulp.src('styleguide/source/patterns/_hidden/stylelint-report/*.txt')
       .pipe(concat('stylelint-report.config.json'))
       .pipe(gulp.dest('styleguide/source/patterns/_hidden/stylelint-report'))
-  });
-
-
-  gulp.task('stylelint-done', function () {
-    console.log('Style linting errors reported to stylelint-report.txt');
+      .on('end', function () {
+        console.log('Stylelint report deployed to the Styleguide');
+      })
   });
 
 };
