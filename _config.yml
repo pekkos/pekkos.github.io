@@ -5,8 +5,10 @@ exclude: [
   "gruntfile.js",
   "grunt",
   "gulpfile.js",
-  "gulp"
+  "gulp",
+  "ssh_config.js",
   "package.json",
+  "package-lock.json",
   "node_modules",
   "DONE.md",
   "CNAME",
