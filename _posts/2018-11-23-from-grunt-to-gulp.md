@@ -6,10 +6,10 @@ tags: grunt gulp
 comments: true
 ---
 
-As a long time user of the task runner [Grunt](https://gruntjs.com), I was finally pushed to make a switch to [Gulp](https://gulpjs.com). It happened at my new employer [Fiwe](https://www.fiwe.com/se/) where they favor Gulp and Webpack over Grunt.
+As a long time user of the [Grunt](https://gruntjs.com) task runner, I was finally pushed to make the switch to [Gulp](https://gulpjs.com). It happened at my new employer [Fiwe](https://www.fiwe.com/se/) where they favor Gulp and Webpack over Grunt.
 
 So I decided to move from Grunt to Gulp on this blog too. Not that I had to, but because it seemed as a natural change since I was optimizing front-end tasks anyway.
 
-It seems that Gulp is a weeny bit faster than Grunt too, so the change will probably be the better choice in the long run. At first I was somewhat confused by Gulp's more programming-like syntax being used to the configuration-like syntax of Grunt, but it didn't atke long to get used to.
+At a first glance Gulp seems to be a weeny bit faster than Grunt too, so the change will probably be the better choice in the long run. I must admit I was somewhat confused by Gulp's more programming-like syntax being used to the configuration-like syntax of Grunt, but it didn't take long to get used to the new way of writing tasks. I even liked it better, actually.
 
-So I guess I'm with the cool kids now.
+So I guess I'm with the cool kids now on the Gulp side of things.
