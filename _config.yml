@@ -3,6 +3,9 @@ url: http://www.pekkos.com
 exclude: [
   "patterns",
   "gruntfile.js",
+  "grunt",
+  "gulpfile.js",
+  "gulp"
   "package.json",
   "node_modules",
   "DONE.md",
@@ -12,7 +15,12 @@ exclude: [
   "npm-debug.log",
   "README.md",
   "stylelint-readme.md",
-  "ui-test"
+  "ui-test",
+  ".editorconfig",
+  ".browserslistrc",
+  ".stylelintrc",
+  "fractal.js",
+  "stylelint-report.txt"
   ]
 permalink: /:categories/:title/
 gems:
