@@ -7,3 +7,6 @@ patterns/public/*
 node_modules/**/*
 node_modules/*
 .DS_Store
+.ftppass
+config.js
+
