@@ -2,6 +2,7 @@ _site/
 .jekyll-metadata
 styleguide/public/**/*
 styleguide/public/*
+!styleguide/public/readme.md
 node_modules/**/*
 node_modules/*
 .DS_Store
