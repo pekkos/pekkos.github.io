@@ -43,6 +43,8 @@ require('./gulp/stylelint')();
 /* Run Fractal tasks */
 require('./fractal')();
 
+/* Deploy tasks */
+require('./gulp/deploy')();
 
 
 

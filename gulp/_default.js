@@ -14,17 +14,6 @@ const runSequence = require('run-sequence');
 
 
 
-const scp = require('gulp-scp2');
-const gulpssh = require('../ssh_config.js');
-
-/*
-var config = {
-  host: 'host.url',
-  username: 'username',
-  password: 'password'
-};
-exports.config = config;
-*/
 
 
 
@@ -45,26 +34,11 @@ module.exports = function () {
     runSequence(
       'sass',       // sass.js
       'postcss',    // postcss.js
-//      'stylelint',  // stylelint.js
+      'stylelint',  // stylelint.js
       'cssmin',      // cssmin.js
       callback
     )
   });
-
-
-  gulp.task('sgdeploy', function () {
-    return gulp.src('styleguide/public/**')
-      .pipe(scp({
-        host: gulpssh.config.host,
-        username: gulpssh.config.username,
-        password: gulpssh.config.password,
-        dest: 'build.pekkos.com/public_html'
-      }))
-      .on('error', function (err) {
-        console.log(err);
-      });
-  });
-
 
 
   gulp.task('done', function () {
