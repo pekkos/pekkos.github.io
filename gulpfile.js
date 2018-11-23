@@ -46,6 +46,9 @@ require('./fractal')();
 /* Deploy tasks */
 require('./gulp/deploy')();
 
+/* Run Jekyll tasks */
+require('./gulp/jekyll')();
+
 
 
 

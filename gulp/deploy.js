@@ -10,7 +10,10 @@
  */
 
 const gulp = require('gulp');
+const runSequence = require('run-sequence');
 const copy = require('gulp-copy');
+
+
 
 /**
  * Task specific modules
@@ -35,6 +38,16 @@ const gulpssh = require('../ssh_config.js');
 
 
 module.exports = function () {
+
+  gulp.task('deploy', function (callback) {
+    runSequence(
+      'deploy:css',
+      'jekyll',
+      'weather',
+      callback
+    )
+  });
+
 
   // Deploy styleguide to the web host
   gulp.task('deploy:sg', function () {
