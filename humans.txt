@@ -5,23 +5,23 @@
 
 /* TEAM */
 
-  Personal web site of:
+Personal web site of:
 
-  Jonas Päckos
-  Contact: hello [at] pekkos.com
-  Twitter: @pekkos
-  From: Gothenburg, Sweden
+Jonas Päckos
+Contact: hello [at] pekkos.com
+Twitter: @pekkos
+From: Gothenburg, Sweden
 
 
 
 /* SITE */
 
-	Last site update: 2016/03/15
-	Language: English
+Last site update: 2016/03/15
+Language: English
 
-	Doctype: HTML5
-  Standards: HTML, CSS, Javascript
-  Components/Tools: -
+Doctype: HTML5
+Standards: HTML, CSS, Javascript
+Components/Tools: -
 
-  Software: Jekyll, GitHub Pages
-  IDE: Atom, VS Code, Octapage
+Software: Jekyll, GitHub Pages
+IDE: Atom, VS Code, Octapage
