@@ -1,0 +1,149 @@
+/*! No CSS before this comment */
+/*! normalize.css v9.0.1 | MIT License | github.com/csstools/normalize.css */
+html{
+  -ms-text-size-adjust:100%;
+  -webkit-text-size-adjust:100%;
+  line-height:1.15;
+}
+h1{
+  margin:0.67em 0;
+  font-size:2em;
+}
+hr{
+  box-sizing:content-box;
+  height:0;
+  overflow:visible;
+}
+main{
+  display:block;
+}
+pre{
+  font-family:monospace, monospace;
+  font-size:1em;
+}
+abbr[title]{
+  -webkit-text-decoration:underline dotted;
+  text-decoration:underline;
+          text-decoration:underline dotted;
+}
+b,
+strong{
+  font-weight:bolder;
+}
+code,
+kbd,
+samp{
+  font-family:monospace, monospace;
+  font-size:1em;
+}
+small{
+  font-size:80%;
+}
+svg:not(:root){
+  overflow:hidden;
+}
+button,
+input,
+select{
+  margin:0;
+}
+button{
+  overflow:visible;
+  text-transform:none;
+}
+button,
+[type="button"],
+[type="reset"],
+[type="submit"]{
+  -webkit-appearance:button;
+}
+fieldset{
+  padding:0.35em 0.75em 0.625em;
+}
+input{
+  overflow:visible;
+}
+legend{
+  display:table;
+  box-sizing:border-box;
+  max-width:100%;
+  color:inherit;
+  white-space:normal;
+}
+progress{
+  display:inline-block;
+  vertical-align:baseline;
+}
+select{
+  text-transform:none;
+}
+textarea{
+  margin:0;
+  overflow:auto;
+}
+[type="search"]{
+  -webkit-appearance:textfield;
+  outline-offset:-2px;
+}
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button{
+  height:auto;
+}
+::-webkit-input-placeholder{
+  opacity:0.54;
+  color:inherit;
+}
+::-webkit-search-decoration{
+  -webkit-appearance:none;
+}
+::-webkit-file-upload-button{
+  -webkit-appearance:button;
+  font:inherit;
+}
+::-moz-focus-inner{
+  border-style:none;
+  padding:0;
+}
+:-moz-focusring{
+  outline:1px dotted ButtonText;
+}
+details,dialog{
+  display:block;
+}
+dialog{
+  position:absolute;
+  right:0;
+  left:0;
+  margin:auto;
+  border:solid;
+  background-color:white;
+  padding:1em;
+  width:-moz-fit-content;
+  width:-webkit-fit-content;
+  width:fit-content;
+  height:-moz-fit-content;
+  height:-webkit-fit-content;
+  height:fit-content;
+  color:black;
+}
+dialog:not([open]){
+  display:none;
+}
+summary{
+  display:list-item;
+}
+template{
+  display:none;
+}
+/*! END: Normalize ------------- */
+.stuff{
+  background:green;
+}
+
+.thing{
+  background:rebeccapurple;
+}
+
+p{
+  font-weight:bold;
+}

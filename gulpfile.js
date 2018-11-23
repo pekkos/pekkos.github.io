@@ -1,87 +1,51 @@
 
-const gulp = require('gulp');
-// const runSequence = require('run-sequence');
-// const rename = require('gulp-rename');
+/*                                    lllllll
+                                      l:::::l
+                                      l:::::l
+                                      l:::::l
+   ggggggggg   ggggguuuuuu    uuuuuu   l::::lppppp   ppppppppp
+  g:::::::::ggg::::gu::::u    u::::u   l::::lp::::ppp:::::::::p
+ g:::::::::::::::::gu::::u    u::::u   l::::lp:::::::::::::::::p
+g::::::ggggg::::::ggu::::u    u::::u   l::::lpp::::::ppppp::::::p
+g:::::g     g:::::g u::::u    u::::u   l::::l p:::::p     p:::::p
+g:::::g     g:::::g u::::u    u::::u   l::::l p:::::p     p:::::p
+g:::::g     g:::::g u::::u    u::::u   l::::l p:::::p     p:::::p
+g::::::g    g:::::g u:::::uuuu:::::u   l::::l p:::::p    p::::::p
+g:::::::ggggg:::::g u:::::::::::::::uul::::::lp:::::ppppp:::::::p
+ g::::::::::::::::g  u:::::::::::::::ul::::::lp::::::::::::::::p
+  gg::::::::::::::g   uu::::::::uu:::ul::::::lp::::::::::::::pp
+    gggggggg::::::g     uuuuuuuu  uuuullllllllp::::::pppppppp
+            g:::::g                           p:::::p
+gggggg      g:::::g                           p:::::p
+g:::::gg   gg:::::g                          p:::::::p
+ g::::::ggg:::::::g                          p:::::::p
+  gg:::::::::::::g                           p:::::::p
+    ggg::::::ggg                             ppppppppp
+       gggggg
 
-
-
-
-
-  // gulp.task('cssmin', function (callback) {
-  //   runSequence(
-  //     'cssMinify',
-  //     'cssMeasureSize', // Get main unminified CSS file size
-  //     'cssCalculateGzip', // Get main minified CSS file gzipped
-  //     'cssmin-done',
-  //     callback
-  //   )
-  // });
-
-
-  // gulp.task('cssMinify', function () {
-  //   return gulp.src([
-  //     'source/css/*.css',
-  //     '!source/css/*.min.css' // If any minified CSS files in the source foolder
-  //   ])
-  //     .pipe(cssmin())
-  //     .pipe(rename({ suffix: '.min' }))
-  //     .pipe(gulp.dest('static/assets/css')); // Put production ready files in /static/
-  // });
-
-
-
-  // gulp.task('cssMeasureSize', function () {
-  //   return gulp.src('source/css/*.css')
-  //     .pipe(cssSize({ showFiles: true, title: 'Compiled and optimized CSS: ' }));
-  // });
-
-
-  // gulp.task('cssCalculateGzip', function () {
-  //   return gulp.src('static/assets/css/*.css')
-  //     .pipe(cssSize({ gzip: true, showFiles: true, title: 'Minified and Gzipped CSS: ' }));
-  // });
-
-// var sftp = require('gulp-sftp');
-
-// gulp.task('ssh', function () {
-//   return gulp.src('patterns/public/**')
-//     .pipe(sftp({
-//       host: 'ssh.binero.se',
-//       auth: 'keyMain',
-//       remotePath: 'build.pekkos.com/public_html/tmp'
-//     }));
-// });
-
-// gulp.task('done', function () {
-//   console.log('CSS files minified and sized up');
-// });
-
-
-var scp = require('gulp-scp2');
-
-var gulpssh = require('./ssh_config.js');
-
-gulp.task('sgdeploy', function () {
-  return gulp.src('patterns/public/**')
-    .pipe(scp({
-      host: gulpssh.config.host,
-      username: gulpssh.config.username,
-      password: gulpssh.config.password,
-      dest: 'build.pekkos.com/public_html/tmp'
-    }))
-    .on('error', function (err) {
-      console.log(err);
-    });
-});
-
-
-/*
-var config = {
-  host: 'host.url',
-  username: 'username',
-  password: 'password'
-};
-exports.config = config;
+https://gulpjs.com/
 */
+
+
+/**
+ * Place all gulp modules in the /gulp/ folder and include (require) them here
+ */
+
+/* Default task */
+require('./gulp/_default')();
+
+/* Sass and CSS tasks */
+require('./gulp/sass')();
+require('./gulp/postcss')();
+require('./gulp/cssmin')();
+require('./gulp/stylelint')();
+
+/* Run Fractal tasks */
+require('./fractal')();
+
+
+
+
+
 
 
