@@ -59,14 +59,14 @@ const gulp = require('gulp');
 
 var scp = require('gulp-scp2');
 
-var gulpftp = require('./config.js');
+var gulpssh = require('./ssh_config.js');
 
-gulp.task('scp2', function () {
+gulp.task('sgdeploy', function () {
   return gulp.src('patterns/public/**')
     .pipe(scp({
-      host: gulpftp.config.host,
-      username: gulpftp.config.username,
-      password: gulpftp.config.password,
+      host: gulpssh.config.host,
+      username: gulpssh.config.username,
+      password: gulpssh.config.password,
       dest: 'build.pekkos.com/public_html/tmp'
     }))
     .on('error', function (err) {
@@ -74,5 +74,14 @@ gulp.task('scp2', function () {
     });
 });
 
+
+/*
+var config = {
+  host: 'host.url',
+  username: 'username',
+  password: 'password'
+};
+exports.config = config;
+*/
 
 
