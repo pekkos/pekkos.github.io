@@ -70,7 +70,7 @@ module.exports = function () {
   // Deploy CSS from Styleguide to Jekyll
   gulp.task('deploy:css', function () {
     return gulp.src('styleguide/static/assets/css/*.css')
-      .pipe(copy('css', { prefix: 4 }))
+      .pipe(copy('assets/css', { prefix: 4 }))
       .on('end', function () {
         console.log('CSS files deployed from Styleguide to Jekyll.')
       });
