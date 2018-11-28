@@ -7,7 +7,6 @@ styleguide/source/**/*.css
 node_modules/**/*
 node_modules/*
 .DS_Store
-.ftppass
 ssh_config.js
 stylelint-report.txt
 
