@@ -3,6 +3,7 @@ _site/
 styleguide/public/**/*
 styleguide/public/*
 !styleguide/public/readme.md
+styleguide/source/**/*.css
 node_modules/**/*
 node_modules/*
 .DS_Store
