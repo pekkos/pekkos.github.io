@@ -1,0 +1,18 @@
+/**
+ * NORMALIZE
+ *
+ * Normalize makes browsers render all elements more consistently and in line
+ * with modern standards.
+ * https://necolas.github.io/normalize.css/
+ *
+ * Import Normalize using PostCSS and base the ruleset using a
+ * .browserslistrc config file
+ * https://github.com/csstools/postcss-normalize/
+ * https://github.com/browserslist/browserslist
+ *
+ */
+
+
+/* This 'unknown' @import-statement will be handled by PostCSS */
+
+@import-normalize;

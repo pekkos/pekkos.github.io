@@ -58,7 +58,7 @@
 /* GLOBAL */
 
 @import "global/global.box-sizing";
-@import-normalize; /* Normalize inserted using PostCSS! */
+@import "global/global.normalize";
 // @import "global/global.reset";
 
 /* HTML */
