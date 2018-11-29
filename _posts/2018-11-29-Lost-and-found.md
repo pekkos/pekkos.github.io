@@ -6,7 +6,7 @@ tags: analytics ux
 comments: true
 ---
 
-I was reminded the other day that I needed to get a 404 page done. So far, I have just been letting Github Pages do its job and present a *Page not found* page whenever a visitor type in a faulty URL, or in any other way end up on a papge that doesn't exist on this site.
+I was reminded the other day that I needed to get a 404 page done. So far, I have just been letting Github Pages do its job and present a *Page not found* page whenever a visitor types in a faulty URL, hits a broken link, or in any other way ends up on a page that doesn't exist on this site.
 
 [An article on Smashing Magazine](https://www.smashingmagazine.com/2018/11/the-101-course-on-crafting-404-pages/) by [Shelby Rogers](https://twitter.com/solodev) got me going, and I immediately set up a basic page with GA tracking and all.
 
