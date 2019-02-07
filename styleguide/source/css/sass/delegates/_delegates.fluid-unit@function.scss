@@ -1,0 +1,4 @@
+
+@function fluid-unit($multiplier-min: 1, $multiplier-max: 2, $dir: 1) {
+  @return between($fluid-bp-min, $fluid-bp-max, $multiplier-min * $unit, $multiplier-min * $multiplier-max * $unit, $dir);
+}

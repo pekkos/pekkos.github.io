@@ -1,0 +1,41 @@
+/**
+ * FONT-FACE
+ *
+ * Automatically generate @font-face declarations from a typeface map
+ *
+ * Usage:
+ *
+
+ $typefaces : (
+   base-font-folder: '',
+   typefaces : ('Verdana', 'Times', 'BellGothic-Bold'),
+ );
+
+ @include fontface($typefaces);
+
+ *
+ * Since January 2017, only load woff2 and woff:
+ * source: https://calendar.perfplanet.com/2016/no-font-face-bulletproof-syntax/
+ *
+ */
+
+
+
+@mixin font-faces($map) {
+  $fonts: map-get($map, "fonts");
+
+  @each $label, $font-map in $map {
+    $family: map-get($font-map, family);
+    $file: map-get($font-map, file);
+    $weight: map-get($font-map, weight);
+    $style: map-get($font-map, style);
+
+    @font-face {
+      font-family: $family;
+      src: url("#{$base-font-folder}#{$file}.woff2") format("woff2"),
+      url("#{$base-font-folder}#{$file}.woff") format("woff");
+      font-weight: $weight;
+      font-style: $style;
+    }
+  }
+}

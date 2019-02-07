@@ -1,0 +1,9 @@
+@function between($mq-min, $mq-max, $min, $max, $dir: 1) {
+  @if $dir == -1 {
+    @return calc(-#{$min} - (#{strip-units($max)} - #{strip-units($min)}) * ((100vw - #{$mq-min}) / (#{strip-units($mq-max)} - #{strip-units($mq-min)})));
+  }
+
+  @else {
+    @return calc(#{$min} + (#{strip-units($max)} - #{strip-units($min)}) * ((100vw - #{$mq-min}) / (#{strip-units($mq-max)} - #{strip-units($mq-min)})));
+  }
+}

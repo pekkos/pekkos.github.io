@@ -1,0 +1,96 @@
+/**
+ * CONTAINER
+ *
+ * A block based on CSS grid that forms a content are restricted in width, and
+ * width dynamic padding on the sides.
+ *
+ *
+ * Definition of container:
+ * :one that contains: such as a receptacle (such as a box or jar) for holding
+ * goods
+ * url: https://www.merriam-webster.com/dictionary/container
+ *
+ * Dependencies
+ * fluid @mixin
+ * fluid-unit @function
+ * mq @mixin
+ * bp / bp-max @mixins
+ */
+
+
+// Grid tracks
+
+
+$full-start:              #{"[full-start]"} fluid-unit(1, 5);
+$container-start:         #{"[container-start]"} minmax(0, $page-max-width);
+$container-end:           #{"[container-end]"} fluid-unit(1, 5);
+$full-end:                #{"[full-end]"};
+
+$full-start-medium:       #{"[full-start]"} fluid-unit(1, 5);
+$container-start-medium:  #{"[container-start]"} minmax(0, 66em);
+$container-end-medium:    #{"[container-end]"} fluid-unit(1, 5);
+$full-end-medium:         #{"[full-end]"};
+
+$full-start-large:        #{"[full-start]"} minmax(fluid-unit(1, 5), 1fr);
+$container-start-large:   #{"[container-start]"} minmax(0, 66em);
+$container-end-large:     #{"[container-end]"} minmax(fluid-unit(1, 5), 1fr);
+$full-end-large:          #{"[full-end]"};
+
+
+@mixin container {
+
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $page-max-width;
+  @include fluid(padding-left);
+  @include fluid(padding-right);
+
+
+  @supports (display: grid) {
+//    @include mq(bp(base)) {
+      display: grid;
+      grid-template-columns:
+        $full-start
+        $container-start
+        $container-end
+        $full-end;
+      max-width: none;
+      padding-left: 0;
+      padding-right: 0;
+
+
+      > * {
+        grid-column: container;
+        margin-left: auto;
+        margin-right: auto;
+        // min-width: 100%;
+        width: 100%;
+      }
+
+
+      > .breakout {
+        grid-column: full;
+        margin-left: 0;
+        margin-right: 0;
+      }
+//    }
+
+
+  //   @include mq(bp(medium)) {
+  //     grid-template-columns:
+  //       $full-start-medium
+  //       $container-start-medium
+  //       $container-end-medium
+  //       $full-end-medium;
+  //   }
+
+
+  //   @include mq(bp(largeplus)) {
+  //     grid-template-columns:
+  //       $full-start-large
+  //       $container-start-large
+  //       $container-end-large
+  //       $full-end-large;
+  //   }
+  }
+}

@@ -1,0 +1,38 @@
+/**
+ * FLUID mixin
+ *
+ * Takes a CSS property and outputs a combination of a fluid together with a
+ * static rem property based on the $unit.
+ *
+ * Possible $key values: quarter, half, full, double and quad.
+ * If no multiplier is sent, full is default.
+ *
+ * Use$£direction -1 to get negative values.
+ */
+
+
+@mixin fluid($property: width, $key: full, $direction: 1, $size-unit: rem) {
+
+  $f-unit: $unit;
+  $multiplier: 1;
+  @if $key == "quarter" { $multiplier: .25; }
+  @if $key == "half" { $multiplier: .5; }
+  @if $key == "double" { $multiplier: 2; }
+  @if $key == "quad" { $multiplier: 4; }
+
+  @if $size-unit == "rem" {
+    $f-unit: $unit;
+  }
+
+  @if $size-unit == "em" {
+    $f-unit: strip-units($unit) * 1em;
+  }
+
+  $dir: "";
+  @if $direction == -1 {
+    $dir: "-";
+  }
+
+  #{$property}: 2 * $multiplier * $f-unit * $direction;
+  #{$property}: var(--size-#{$dir}#{$key});
+}

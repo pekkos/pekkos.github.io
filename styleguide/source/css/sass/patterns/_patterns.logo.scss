@@ -1,0 +1,32 @@
+.logo {
+  font-family: Montserrat, Tahoma, Verdana, sans-serif; /* TOOD: font stack */
+  font-weight: 900;
+  letter-spacing: .05em;
+}
+
+
+
+
+
+.logo__text {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
+
+
+.logo__text::before {
+  content: "</";
+  speak: none;
+}
+
+
+
+
+
+.logo__text::after {
+  content: ">";
+  speak: none;
+}

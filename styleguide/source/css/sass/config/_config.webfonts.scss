@@ -1,0 +1,63 @@
+/* The base font folder must be assigned in relation to the stylesheet file */
+$base-font-folder: "type/";
+
+/* Map of webfonts */
+$fontfamilies: (
+
+  primary-regular : (
+    family  : "Lora",
+    file    : "lora-regular",
+    weight  : normal,
+    style   : normal
+  ),
+
+  primary-italic : (
+    family  : "Lora",
+    file    : "lora-italic",
+    weight  : normal,
+    style   : italic
+  ),
+
+  primary-bold : (
+    family  : "Lora",
+    file    : "lora-bold",
+    weight  : bold,
+    style   : normal
+  ),
+
+  primary-bolditalic : (
+    family  : "Lora",
+    file    : "lora-bolditalic",
+    weight  : bold,
+    style   : italic
+  ),
+
+  secondary-regular : (
+    family  : "Montserrat",
+    file    : "montserrat-regular",
+    weight  : normal,
+    style   : normal
+  ),
+
+  secondary-semibold : (
+    family  : "Montserrat",
+    file    : "montserrat-semibold",
+    weight  : bold,
+    style   : normal
+  ),
+
+  secondary-extrabold : (
+    family  : "Montserrat",
+    file    : "montserrat-extrabold",
+    weight  : 800,
+    style   : normal
+  ),
+
+  secondary-black : (
+    family  : "Montserrat",
+    file    : "montserrat-black",
+    weight  : 900,
+    style   : normal
+  )
+
+);

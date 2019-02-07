@@ -43,6 +43,16 @@ module.exports = function () {
   });
 
 
+  gulp.task('cssd', function (callback) {
+    runSequence(
+      'css',
+      'deploy:css',
+      'jekyll',
+      callback
+    )
+  });
+
+
   gulp.task('done', function () {
     console.log('All tasks done. Now what?');
   });

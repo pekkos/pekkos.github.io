@@ -11,8 +11,7 @@
  * CONFIG
  *
  * DELEGATES
- * All ..................... Delegates are tools and helpers and since they
- *                           don't produce any CSS they can be glob imported.
+ * Container ............... Defines a page content block
  *
  * GLOBAL
  * Box-sizing .............. Default 'box-sizing'
@@ -20,6 +19,7 @@
  *                           browserslist config file
  *
  * HTML
+ * Root .................... Page level elements (html and body)
  *
  * LAYOUT
  *
@@ -39,38 +39,45 @@
  *
  */
 
-
-
-
-
-/*! No CSS before this comment! */
-
-
 /* CONFIG */
+@import "config/config.measures";
+@import "config/config.breakpoints";
+@import "config/config.webfonts";
 
 /* DELEGATES */
-@import "delegates/**/*.scss";
+@import "delegates/delegates.strip-units@function";
+@import "delegates/delegates.between@function";
+@import "delegates/delegates.fluid-unit@function";
+@import "delegates/delegates.fluid@mixin";
+@import "delegates/delegates.container@mixin";
+@import "delegates/delegates.font-face@mixin";
 
-
-
-
+/* The above @imports must not produce any CSS so the comment below is a sanity
+   check that survives into CSS after Sass has been processed: */
+/*! No CSS before this comment! */
 
 /* GLOBAL */
-
 @import "global/global.box-sizing";
 @import "global/global.normalize";
 // @import "global/global.reset";
 
+
 /* HTML */
+@import "html/html.root";
+
 
 /* LAYOUT */
 
+
 /* OBJECTS */
+
 
 /* PATTERNS */
 @import "patterns/**/*.scss";
 
+
 /* UTILITIES */
 @import "utilities/utilities.shame";
+
 
 /* WELLNESS */

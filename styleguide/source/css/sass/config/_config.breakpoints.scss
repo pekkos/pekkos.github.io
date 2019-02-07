@@ -1,0 +1,44 @@
+/**
+ *  Breakpoints
+ *
+ * EM based breakpoints are calculated using the default browser font size,
+ * which most commonly is 16px.
+ *
+ * Therefore, this formula can be used:
+ * 28.125em * 16px = 450px
+ */
+
+
+
+
+/**
+ * Breakpoint gap
+ *
+ * Used to calculate a max value when defining a range, so that the max value
+ * don't coincide with the next breakpoint min value.
+ *
+ */
+
+$breakpoint-gap: .01; /* Breakpoint gap (assumes values are in ems) */
+
+
+
+/**
+ * Breakpoint map
+ *
+ * Contains defined breakpoints with em values
+ *
+ */
+
+$breakpoints: (
+  base       : 0,
+  xsmall     : 18.75em,    /* 18.75em  * 16px =  300px */
+  small      : 28.125em,   /* 28.125em * 16px =  450px */
+  medium     : 43.75em,    /* 43.75em  * 16px =  700px */
+  large      : 56.25em,    /* 56.25em  * 16px =  900px */
+  xlarge     : 81.25em,    /* 81.25em  * 16px = 1300px */
+  xxlarge    : 87.5em      /* 87.5em   * 16px = 1400px */
+);
+
+$fluid-bp-min: map-get($breakpoints, xsmall);
+$fluid-bp-max: map-get($breakpoints, xlarge);
